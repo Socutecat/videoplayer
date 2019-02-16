@@ -41,6 +41,11 @@ class VideoPlayer {
         this._video.volume = this._volume.value;
     }
 
+    _dblClikc(event) {
+        console.log(event);
+        
+    }
+
     //обработка скорости воспроизведения видео
     _playbackChange() {
         this._video.playbackRate = this._playback.value;
@@ -79,6 +84,7 @@ class VideoPlayer {
         this._toggleBtn.addEventListener('click', () => this.toggle());
         this._video.addEventListener('timeupdate', () => this._videoProgressHandler());
         this._progressContainer.addEventListener('click', (e) => this._peremotka(e));
+        this._video.addEventListener('dblclick', (e) => this._dblClikc(e));
 
 
         // вешаем обработчик и слушаем изменение громкости звука
