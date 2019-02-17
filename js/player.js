@@ -42,8 +42,8 @@ class VideoPlayer {
     }
 
     _dblClikc(event) {
-        console.log(event);
-        
+        console.log(event)
+        event.offsetX / this.vieo.offsetWidth <= 0.5 ? this._skipBackward() : this._skipForward();
     }
 
     //обработка скорости воспроизведения видео
