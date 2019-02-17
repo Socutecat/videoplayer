@@ -41,9 +41,9 @@ class VideoPlayer {
         this._video.volume = this._volume.value;
     }
 
-    _dblClikc(event) {
+    _dblClikc(e) {
         console.log(event)
-        event.offsetX / this.vieo.offsetWidth <= 0.5 ? this._skipBackward() : this._skipForward();
+        this._seek (this._settings.skip * e.offsetX / this._video.offsetWidth > 0.5 ? 1 : -1);
     }
 
     //обработка скорости воспроизведения видео
@@ -88,7 +88,7 @@ class VideoPlayer {
 
 
         // вешаем обработчик и слушаем изменение громкости звука
-        this._volume.addEventListener('click', () => this._musicChange());
+        this._volume.addEventListener('input', () => this._musicChange());
 
 
         // вешаем обработчик и слушаем изменение скорости воспроизведение видео
