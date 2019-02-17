@@ -41,6 +41,7 @@ class VideoPlayer {
         this._video.volume = this._volume.value;
     }
 
+    //обработка перемотки по двойному нажатию мыши.
     _dblClikc(e) {
         console.log(event)
         this._seek (this._settings.skip * e.offsetX / this._video.offsetWidth > 0.5 ? 1 : -1);
